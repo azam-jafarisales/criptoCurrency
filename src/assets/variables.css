@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #12181f;
+  --color-secondary: #a4a8ab;
+  --color-dark: #161d26;
+  --color-white: #ffffff;
+  --color-main-text: #ffffff;
+  --color-menu-text: #c2c2c2;
+  --color-green: #0caf60;
+  --color-red: #ff3e46;
+  --color-orange: #fb774a;
+  --color-purple: #674aff;
+  --f-size-14: 14px;
+  --f-size-16: 16px;
+  --f-size-26: 26px;
+  --f-family: Poppins;
+}
