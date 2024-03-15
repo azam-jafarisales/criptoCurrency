@@ -83,12 +83,12 @@ video {
   vertical-align: baseline;
   background: transparent;
   box-sizing: border-box;
-  font-family: "Hind Madurai", sans-serif;
+  font-family: var(--f-family);
 }
 
 body {
   line-height: 1;
-  font-family: "Hind Madurai", sans-serif;
+  font-family: var(--f-family);
 }
 
 article,
