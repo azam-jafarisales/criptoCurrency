@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
-import { httpClient } from "./services/http";
-// import axios from "axios";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { routes } from "./pages/routes";
 
 function App() {
-  const [post, setPost] = useState(null);
-  const [error, setError] = useState(null);
- 
-  useEffect(() => {
-   httpClient
-      .get("coins/list")
-      .then((response) => {
-        setPost(response);
-      })
-      .catch((error) => {
-        setError(error);
-      });
-  }, []);
-  if (error) return `Error: ${error.message}`;
-  if (!post) return "No post!";
+  const router = createBrowserRouter(routes);
 
-  console.log(post);
-  return <div>hello</div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
+
