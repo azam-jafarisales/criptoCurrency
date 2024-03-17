@@ -1,0 +1,9 @@
+export const DASHBOARD = "/";
+export const EXCHANGE ="exchange";
+export const NEWS ="news";
+export const TRANSICATION ="transication";
+export const WALLET ="wallet";
+export const TRADE ="trade";
+export const NFT ="nft";
+export const SETTING ="setting";
+export const NOT_FOUNDED ="*";
