@@ -6,6 +6,12 @@ import styles from "./styles.module.css";
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 
+defaults.plugins.title.display = true;
+defaults.plugins.title.align = "start";
+defaults.plugins.title.font.size = 16;
+defaults.plugins.title.font.family = "Poppins";
+defaults.plugins.title.color = "black";
+
 function DoughnutChart() {
   return (
     <div className={styles.doughnutChart_container}>
@@ -25,6 +31,13 @@ function DoughnutChart() {
               ],
             },
           ],
+        }}
+        options={{
+          plugins: {
+            title: {
+              text: "balance",
+            },
+          },
         }}
       />
     </div>
