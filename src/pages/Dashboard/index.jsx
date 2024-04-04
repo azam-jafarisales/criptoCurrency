@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
+import DoughnutChart from "../../components/DoughnutChart";
 
-function Dashboard(){
-    return (
-        <>
-        <p>hello</p>
-        <Outlet />
-        </>
-    )
+function Dashboard() {
+  return (
+    <>
+      <DoughnutChart />
+      <Outlet />
+    </>
+  );
 }
 
 export default Dashboard;
