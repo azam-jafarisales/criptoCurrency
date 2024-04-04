@@ -1,7 +1,10 @@
-import { Chart as ChartJS } from "chart.js/auto";
+import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
 import styles from "./styles.module.css";
+
+defaults.maintainAspectRatio = false;
+defaults.responsive = true;
 
 function DoughnutChart() {
   return (
@@ -11,7 +14,7 @@ function DoughnutChart() {
           labels: "",
           datasets: [
             {
-              label: "test",
+              label: "$ ",
               data: [20, 15, 30, 25, 10],
               backgroundColor: [
                 "#ffaa35",
