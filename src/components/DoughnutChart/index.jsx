@@ -13,6 +13,21 @@ defaults.plugins.title.font.family = "Poppins";
 defaults.plugins.title.color = "black";
 
 function DoughnutChart() {
+  const doughnutLabel = {
+    Id: "doughnutLabel",
+    afterDatasetsDraw(chart, args, plugins) {
+      const { ctx, data } = chart;
+      const centerX = chart.getDatasetMeta(0).data[0].x;
+      const centerY = chart.getDatasetMeta(0).data[0].y;
+
+      //TEXT
+      ctx.save();
+      ctx.font = "bold 16px sans-serif";
+      ctx.fillStyle = "black";
+      ctx.fillText("test", centerX, centerY);
+      ctx.textAlign = "center";
+    },
+  };
   return (
     <div className={styles.doughnutChart_container}>
       <Doughnut
@@ -35,6 +50,7 @@ function DoughnutChart() {
             },
           },
         }}
+        plugins={[doughnutLabel]}
       />
     </div>
   );
