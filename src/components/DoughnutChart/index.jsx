@@ -1,4 +1,4 @@
-import { Chart as ChartJS, defaults } from "chart.js/auto";
+import { defaults } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
 import styles from "./styles.module.css";
@@ -13,19 +13,34 @@ defaults.plugins.title.font.family = "Poppins";
 defaults.plugins.title.color = "black";
 
 function DoughnutChart() {
-  const doughnutLabel = {
-    Id: "doughnutLabel",
-    afterDatasetsDraw(chart, args, plugins) {
-      const { ctx, data } = chart;
-      const centerX = chart.getDatasetMeta(0).data[0].x;
-      const centerY = chart.getDatasetMeta(0).data[0].y;
+  const customPlugin = {
+    doughnutLabel: {
+      // beforeDatasetsDraw
+      // afterDatasetsDraw
+      //beforeDraw
+      Id: "doughnutLabel",
+      afterDatasetsDraw(chart, args, plugins) {
+        const { ctx } = chart;
+        const centerX = chart.getDatasetMeta(0).data[0].x;
+        const centerY = chart.getDatasetMeta(0).data[0].y;
 
-      //TEXT
-      ctx.save();
-      ctx.font = "bold 16px sans-serif";
-      ctx.fillStyle = "black";
-      ctx.fillText("test", centerX, centerY);
-      ctx.textAlign = "center";
+        //text
+        ctx.save();
+        ctx.font = "bold 16px Poppins";
+        ctx.fillStyle = "black";
+        ctx.fillText("test", centerX, centerY);
+        ctx.textAlign = "center";
+      },
+    },
+    sliceThickness: {
+      id: "sliceThickness",
+      beforeDraw(chart, plugins) {
+        let sliceThicknessp = [500, 500, 500, 500];
+        sliceThicknessp.forEach((thickness, index) => {
+          chart.getDatasetMeta(0).data[index].outerRadius =
+            (chart.chartArea.width / thickness) * 100;
+        });
+      },
     },
   };
   return (
@@ -50,7 +65,7 @@ function DoughnutChart() {
             },
           },
         }}
-        plugins={[doughnutLabel]}
+        plugins={[customPlugin.doughnutLabel, customPlugin.sliceThickness]}
       />
     </div>
   );
