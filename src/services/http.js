@@ -1,5 +1,5 @@
 import axios from "axios";
-export const DEFAULT_TIMEOUT=5000
+export const DEFAULT_TIMEOUT=10000
 export const httpClient = axios.create({
     baseURL: "https://api.coingecko.com/api/v3" 
   });
