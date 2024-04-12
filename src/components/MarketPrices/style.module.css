@@ -1,0 +1,7 @@
+.marketPrices{
+    display: flex;
+    min-width: 1202px;
+    overflow-x: scroll;
+    /* background-color: blue; */
+    justify-content: space-between;
+}

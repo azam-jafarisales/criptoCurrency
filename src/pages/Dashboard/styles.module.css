@@ -1,0 +1,34 @@
+.container {
+  padding: 33px 26px;
+  background-color: var(--color-primary);
+  color: white;
+  display: grid;
+  grid-template-columns: 899px 286px;
+  gap: 17px;
+  grid-template-rows: 133px 352px 399px 175px;
+  grid-template-areas: "head balance" "portflio balance" "activity exchange" "footer footer";
+}
+
+.account {
+  grid-area: head;
+  background-color: yellow;
+}
+
+.portflio {
+  grid-area: portflio;
+}
+.balance {
+  grid-area: balance;
+  background-color: rgb(160, 55, 73);
+}
+.recentActivity {
+  grid-area: activity;
+  background-color: rgb(65, 55, 160);
+}
+.quickExchange {
+  grid-area: exchange;
+}
+
+.marketPrice {
+  grid-area: footer;
+}

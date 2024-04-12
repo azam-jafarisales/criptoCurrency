@@ -1,0 +1,56 @@
+.MarketItem{
+    width: 287px;
+    height: 175px;
+    background-color: inherit;
+    padding: 19px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.marketPrices{
+    display: flex;
+    min-width: 1202px;
+    overflow-x: scroll;
+    /* background-color: blue; */
+    justify-content: space-between;
+}
+
+.titles{
+    /* background-color: blue; */
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cripto{
+    background-color: inherit;
+    width: 110.7px;
+    height: 100%;
+}
+
+.time{
+    background-color:inherit;
+    width: 51px;
+    height: 28px;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.chart{
+    /* background-color: purple; */
+    width: 100%;
+    height: 83px;
+}
+
+.line{
+    width: 100% !important;
+    height: 100% !important;
+}
+
