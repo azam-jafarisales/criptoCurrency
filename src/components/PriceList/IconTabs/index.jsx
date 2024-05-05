@@ -8,6 +8,8 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import GridViewIcon from "@mui/icons-material/GridView";
 import BubbleChartIcon from "@mui/icons-material/BubbleChart";
 
+import styles from "./styles.module.css";
+
 export default function IconTabs() {
   const [value, setValue] = useState(0);
 
@@ -16,18 +18,14 @@ export default function IconTabs() {
   };
 
   const style = {
-    color: "var(--white)",
-    fontWeight: "bold",
-    fontFamily: "var(--font)",
-    fontSize: "1rem",
-    textTransform: "capitalize",
-    padding: "0.5rem",
+    color: "var(--color-secondary)",
+    fontFamily: "var(--f-family)",
   };
 
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#ad1c21",
+        main: "#0caf60",
       },
     },
   });
@@ -35,21 +33,21 @@ export default function IconTabs() {
   return (
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
-        <TabList onChange={handleChange}>
+        <TabList onChange={handleChange} className={styles.test}>
           <Tab
-            icon={<FormatListBulletedIcon />}
+            icon={<FormatListBulletedIcon sx={{ fontSize: 20 }} />}
             aria-label="list"
             value="list"
             sx={style}
           />
           <Tab
-            icon={<GridViewIcon />}
+            icon={<GridViewIcon sx={{ fontSize: 20 }} />}
             aria-label="grid"
             value="grid"
             sx={style}
           />
           <Tab
-            icon={<BubbleChartIcon />}
+            icon={<BubbleChartIcon sx={{ fontSize: 20 }} />}
             aria-label="bubble"
             value="bubble"
             sx={style}

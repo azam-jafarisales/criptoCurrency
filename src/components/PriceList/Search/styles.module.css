@@ -1,24 +1,24 @@
 .search_container {
-  width: 96%;
+  width: 300px;
   border-radius: 1rem;
   padding: 0 1rem;
-  margin: 0 auto;
-  background: transparent;
-  border: 3px solid var(--dark-gray);
+  margin-right: 1rem;
+  background: var(--color-dark);
   display: flex;
   align-items: center;
-  color: var(--gray);
+  color: #ccc;
   box-sizing: border-box;
 }
 
 .search_container input {
   width: 95%;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.2rem;
   border: none;
   outline: none;
   background-color: transparent;
-  color: var(--gray);
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  word-spacing: 1px;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 1rem;
+  word-spacing: 1.5px;
+  letter-spacing: 1px;
 }
