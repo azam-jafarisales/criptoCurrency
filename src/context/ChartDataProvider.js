@@ -36,13 +36,3 @@ export const ChartDataProvider = ({ children }) => {
   );
 };
 
-// useEffect(() => {
-//   httpClient
-//     .get(`coins/bitcoin/market_chart?vs_currency=usd&days=${day}`)
-//     .then((response) => {
-//       setChartData(response);
-//     })
-//     .catch((error) => {
-//       setError(error);
-//     });
-// }, [day]);
