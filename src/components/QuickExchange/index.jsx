@@ -5,15 +5,14 @@ import { PriceContext } from "../../context/PriceProvider";
 
 function QuickExchange() {
   const [post] = useContext(PriceContext);
-  const [imageSrc, setImageSrc] = useState("");
-  //   console.log(post);
+  const [imageSrc1, setImageSrc1] = useState("");
+  const [imageSrc2, setImageSrc2] = useState("");
   const handleSelectChange = (event) => {
     const selectedOption = event.target.value;
     const image = post
       .filter((item) => item.name === selectedOption)
       .map((image) => image.image);
-    // console.log(image)
-    setImageSrc(image);
+    setImageSrc1(image);
   };
   return (
     <div className={styles.container}>
@@ -30,7 +29,7 @@ function QuickExchange() {
           <div>
             <div className={styles.coin}>
               <div className={styles.coinImage}>
-                <img src={imageSrc} alt="" />
+                <img src={imageSrc1} alt="" />
               </div>
               <select onChange={handleSelectChange} name="" id="">
                 {post.map((item) => {
@@ -50,14 +49,14 @@ function QuickExchange() {
             <h4>0.00002 usdt</h4>
           </div>
           <div className={styles.coin}>
-          <div className={styles.coinImage}>
-                <img src={imageSrc} alt="" />
-              </div>
-              <select onChange={handleSelectChange} name="" id="">
-                {post.map((item) => {
-                  return <option>{item.name}</option>;
-                })}
-              </select>
+            <div className={styles.coinImage}>
+              <img src={imageSrc2} alt="" />
+            </div>
+            <select onChange={handleSelectChange} name="" id="">
+              {post.map((item) => {
+                return <option>{item.name}</option>;
+              })}
+            </select>
             <h4>0.01</h4>
           </div>
         </div>

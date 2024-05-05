@@ -1,27 +1,48 @@
 import { createContext, useState } from "react";
 import { httpClient } from "../services/http";
-import { useEffect } from "react";
 export const chartContext = createContext();
 export const ChartDataProvider = ({ children }) => {
+  const ids = ["bitcoin", "conflux-token"];
   const [chartData, setChartData] = useState(null);
-  const [day, setDay] = useState("1");
+  const initialSelectedDays = ids.reduce((acc, id) => {
+    acc[id] = 1;
+    return acc;
+  }, {});
+  const [selectedDays, setSelectedDays] = useState(initialSelectedDays);
   const [error, setError] = useState(null);
-  // const [id , setId]=useState([])
-  useEffect(() => {
+  function getPosts(id) {
     httpClient
-      .get(`coins/bitcoin/market_chart?vs_currency=usd&days=${day}`)
+      .get(`coins/${id}/market_chart?vs_currency=usd&days=${selectedDays[id]}`)
       .then((response) => {
-        setChartData(response);
+        setChartData((prevState) => ({
+          ...prevState,
+          [id]: {
+            labels: response?.prices.map((item) => item[0]),
+            data: response?.prices.map((item) => item[1]),
+          },
+        }));
       })
       .catch((error) => {
         setError(error);
       });
-  }, [day]);
-  if (error) return `Error: ${error.message}`;
+  }
 
   return (
-    <chartContext.Provider value={[chartData, day, setDay]}>
+    <chartContext.Provider
+      value={[chartData, selectedDays, setSelectedDays, getPosts, ids]}
+    >
       {children}
     </chartContext.Provider>
   );
 };
+
+// useEffect(() => {
+//   httpClient
+//     .get(`coins/bitcoin/market_chart?vs_currency=usd&days=${day}`)
+//     .then((response) => {
+//       setChartData(response);
+//     })
+//     .catch((error) => {
+//       setError(error);
+//     });
+// }, [day]);

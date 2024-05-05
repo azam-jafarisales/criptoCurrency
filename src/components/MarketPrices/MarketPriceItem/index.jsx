@@ -1,8 +1,7 @@
 import styles from "./style.module.css";
 import { Line } from "react-chartjs-2";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { httpClient } from "../../../services/http";
+import { useEffect, useContext } from "react";
+import { chartContext } from "../../../context/ChartDataProvider";
 import {
   PointElement,
   LineElement,
@@ -24,36 +23,14 @@ Chartjs.register(
 );
 
 function MarketPriceItem({ item }) {
-  const ids = ["bitcoin", "conflux-token"];
-  const initialSelectedDays = ids.reduce((acc, id) => {
-    acc[id] = 1;
-    return acc;
-  }, {});
-  const [posts, setPosts] = useState({});
-  const [selectedDays, setSelectedDays] = useState(initialSelectedDays);
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
-
-  function getPosts(id) {
-    httpClient
-    .get(`coins/${id}/market_chart?vs_currency=usd&days=${selectedDays[id]}`)
-    .then((response) => {
-   
-           setPosts((prevState) => ({
-        ...prevState,
-        [id]: {
-          labels: response.prices.map((item) => item[0]),
-          data: response.prices.map((item) => item[1]),
-        },
-      }));
-    })
-    .catch((error) => {
-      setHasError(error);
-    });
-  }
-  console.log(posts);
-
+  const [
+    chartData,
+    selectedDays,
+    setSelectedDays,
+    getPosts,
+    ids
+  ] = useContext(chartContext);
+  console.log(chartData)
   useEffect(() => {
     const fetchPosts = async () => {
       for (let i = 0; i < ids.length; i++) {
@@ -62,11 +39,10 @@ function MarketPriceItem({ item }) {
     };
 
     fetchPosts();
-  }, [selectedDays]);
+  }, [selectedDays , ...ids]);
 
-  console.log(selectedDays);
   const renderCharts = (labels, data) => {
-    if (!labels || !data) return null; 
+    if (!labels || !data) return null;
 
     const Data = {
       labels: labels,
@@ -142,35 +118,36 @@ function MarketPriceItem({ item }) {
 
   return (
     <div>
-      <div className={styles.marketPrices}>
-        {Object.keys(posts).map((key) => (
-          <div className={styles.MarketItem}>
-            <div className={styles.titles}>
-              <div className={styles.cripto}>
-                <div></div>
-                <div>
-                  <h2>{key}</h2>
+      {chartData && (
+        <div className={styles.marketPrices}>
+          {Object.keys(chartData).map((key) => (
+            <div className={styles.MarketItem}>
+              <div className={styles.titles}>
+                <div className={styles.cripto}>
+                  <div></div>
+                  <div>
+                    <h2>{key}</h2>
+                  </div>
                 </div>
+                <select
+                  onChange={(e) => {
+                    setSelectedDays((prevDays) => ({
+                      ...prevDays,
+                      [key]: e.target.value,
+                    }));
+                  }}
+                  name=""
+                >
+                  <option value="1">1</option>
+                  <option value="7">7</option>
+                  <option value="30">30</option>
+                </select>
               </div>
-              <select
-                onChange={(e) => {
-                  setSelectedDays((prevDays) => ({
-                    ...prevDays,
-                    [key]: e.target.value,
-                  }));
-                  console.log(selectedDays);
-                }}
-                name=""
-              >
-                <option value="1">1</option>
-                <option value="7">7</option>
-                <option value="30">30</option>
-              </select>
+              {renderCharts(chartData[key]?.labels, chartData[key]?.data)}
             </div>
-            {renderCharts(posts[key]?.labels, posts[key]?.data)}
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
 // import { PriceProvider } from "../../context/PriceProvider";
-// import { ChartDataProvider } from "../../context/ChartDataProvider";
+import { ChartDataProvider } from "../../context/ChartDataProvider";
 import MarketPricees from "../../components/MarketPrices";
-// import LineChart from "../../components/PortFoilo";
+import LineChart from "../../components/PortFoilo";
 // import QuickExchange from "../../components/QuickExchange";
 // import MarketPriceItem from "../../components/MarketPrices/MarketPriceItem";
 
@@ -19,11 +19,11 @@ function Dashboard() {
     //     <div className={styles.quickExchange}>
     //       <QuickExchange />
     //     </div>
-    //     <ChartDataProvider>
+        <ChartDataProvider>
         <div className={styles.marketPrice}>
           <MarketPricees/>
         </div>
-    //     </ChartDataProvider>
+        </ChartDataProvider>
     //   </div>
     // </PriceProvider>
   );

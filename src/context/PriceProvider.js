@@ -15,7 +15,6 @@ export const PriceProvider = ({ children }) => {
         setError(error);
       });
   }, []);
-  // console.log(post)
   if (error) return `Error: ${error.message}`;
   if (!post) return "No post!";
  
