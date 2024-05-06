@@ -1,7 +1,9 @@
 import React from "react";
 
-const List = () => {
-  return <div></div>;
+// import styles from "./styles.module.css";
+
+const List = ({ coin }) => {
+  return <div>{coin.id}</div>;
 };
 
 export default List;

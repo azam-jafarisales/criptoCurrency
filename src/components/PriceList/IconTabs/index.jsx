@@ -8,10 +8,12 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import GridViewIcon from "@mui/icons-material/GridView";
 import BubbleChartIcon from "@mui/icons-material/BubbleChart";
 
+import List from "../List";
+
 import styles from "./styles.module.css";
 
-export default function IconTabs() {
-  const [value, setValue] = useState(0);
+export default function IconTabs({ coins }) {
+  const [value, setValue] = useState("list");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -54,7 +56,11 @@ export default function IconTabs() {
           />
         </TabList>
         <TabPanel value="list">
-          <div>hello</div>
+          <div className={styles.list_container}>
+            {coins.map((coin, i) => {
+              return <List coin={coin} key={i} />;
+            })}
+          </div>
         </TabPanel>
         <TabPanel value="grid">
           <div>grid</div>
