@@ -1,0 +1,21 @@
+.list_item_container {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+  color: var(--color-menu-text);
+}
+
+.list_item_container img {
+  width: 45px;
+}
+
+.list_item_container p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.5;
+  font-size: 1rem;
+}
