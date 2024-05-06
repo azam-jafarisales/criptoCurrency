@@ -1,6 +1,6 @@
 .list_item_container {
   display: grid;
-  grid-template-columns: repeat(7, 100px);
+  grid-template-columns: repeat(8, 100px);
   gap: 1rem;
   justify-content: start;
   align-items: center;
@@ -11,7 +11,7 @@
   width: 45px;
 }
 
-.list_item_container p {
+.crypto_name {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,3 +19,23 @@
   line-height: 1.5;
   font-size: 1rem;
 }
+
+.circulating_supply {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* input[type="range"] {
+  background: gray;
+  border-radius: 8px;
+  height: 7px;
+  width: 150px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+} */
+
+/* input[type="range"]::-webkit-slider-thumb {
+  width: 0;
+  -webkit-appearance: none;
+} */
