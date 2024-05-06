@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Search from "../../components/PriceList/Search";
 import IconTabs from "../../components/PriceList/IconTabs";
+import Loader from "../../components/Common/Loader";
 
 import styles from "./styles.module.css";
 import PaginationControlled from "../../components/PriceList/Pagination";
@@ -11,6 +12,7 @@ function Prices() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [paginatedCoins, setPaginatedCoins] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -37,20 +39,28 @@ function Prices() {
         setCoins(res.data);
         console.log(res.data);
         setPaginatedCoins(res.data.slice(0, 10));
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log("Error : " + error);
+        setIsLoading(false);
       });
   }, []);
   return (
     <div className={styles.livePrices_container}>
-      <div className={styles.top_row}>
-        <h2>Cryptocurrency Prices</h2>
-        <Search search={search} onSearchChange={onSearchChange} />
-      </div>
-      <IconTabs coins={search ? filterCoins : paginatedCoins} />
-      {!search && (
-        <PaginationControlled page={page} handleChange={handleChange} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className={styles.top_row}>
+            <h2>Cryptocurrency Prices</h2>
+            <Search search={search} onSearchChange={onSearchChange} />
+          </div>
+          <IconTabs coins={search ? filterCoins : paginatedCoins} />
+          {!search && (
+            <PaginationControlled page={page} handleChange={handleChange} />
+          )}
+        </>
       )}
     </div>
   );
