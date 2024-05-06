@@ -1,0 +1,24 @@
+.search_container {
+  width: 300px;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  margin-right: 1rem;
+  background: var(--color-dark);
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  box-sizing: border-box;
+}
+
+.search_container input {
+  width: 95%;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 1rem;
+  word-spacing: 1.5px;
+  letter-spacing: 1px;
+}

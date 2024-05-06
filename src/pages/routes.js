@@ -8,6 +8,7 @@ import Trade from "./Trade";
 import Setting from "./Setting";
 import Wallet from "./Wallet";
 import Transication from "./Transication";
+import Prices from "./Prices";
 
 export const routes = [
   {
@@ -50,5 +51,9 @@ export const routes = [
   {
     path: paths.NOT_FOUNDED,
     element: <NotFound />,
+  },
+  {
+    path: paths.PRICES,
+    element: <Prices />,
   },
 ];
