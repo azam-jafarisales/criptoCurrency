@@ -1,14 +1,15 @@
 .list_item_container {
   display: grid;
-  grid-template-columns: repeat(8, 100px);
-  gap: 1rem;
+  grid-template-columns: 10px 50px repeat(6, 100px);
+  gap: 1.5rem;
   justify-content: start;
   align-items: center;
-  color: var(--color-menu-text);
+  color: var(--color-secondary);
+  font-size: 0.9rem;
 }
 
 .list_item_container img {
-  width: 45px;
+  width: 40px;
 }
 
 .crypto_name {
@@ -23,6 +24,33 @@
 .circulating_supply {
   display: flex;
   gap: 0.5rem;
+}
+
+.list_order {
+  font-size: 0.8rem;
+}
+
+.green {
+  color: var(--color-green);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: flex-start;
+  border: 1px solid var(--color-green);
+  border-radius: 5px;
+  width: 90%;
+  font-size: 0.85rem;
+}
+
+.red {
+  color: var(--color-red);
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  border: 1px solid var(--color-red);
+  border-radius: 5px;
+  width: 90%;
+  font-size: 0.85rem;
 }
 
 /* input[type="range"] {

@@ -9,3 +9,17 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+.list_titles {
+  display: grid;
+  grid-template-columns: 10px 50px repeat(6, 100px);
+  gap: 1.5rem;
+  justify-content: start;
+  align-items: center;
+  color: var(--color-menu-text);
+}
+.list_titles span {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  word-spacing: 2px;
+}

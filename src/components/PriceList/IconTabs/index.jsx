@@ -57,6 +57,17 @@ export default function IconTabs({ coins }) {
         </TabList>
         <TabPanel value="list">
           <div className={styles.list_container}>
+            <div className={styles.list_titles}>
+              <span>#</span>
+              <span className={styles.coin_title}>Coin</span>
+              <span></span>
+              <span>Price</span>
+              <span>24h%</span>
+              <span>Market Cap</span>
+              <span>Total volume</span>
+              <span>Circulating Supply</span>
+              <span></span>
+            </div>
             {coins.map((coin, i) => {
               return <List coin={coin} key={i} />;
             })}
