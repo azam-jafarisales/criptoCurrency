@@ -1,10 +1,5 @@
-export const DASHBOARD = "/";
-export const EXCHANGE = "exchange";
-export const NEWS = "news";
-export const TRANSICATION = "transication";
-export const WALLET = "wallet";
-export const TRADE = "trade";
-export const NFT = "nft";
-export const SETTING = "setting";
+export const CURRENCY = "/";
+export const TRENDING = "trending-coins";
 export const NOT_FOUNDED = "*";
 export const PRICES = "prices";
+export const DASHBOARD = "dashboard";

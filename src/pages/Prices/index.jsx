@@ -5,6 +5,7 @@ import IconTabs from "../../components/PriceList/IconTabs";
 
 import styles from "./styles.module.css";
 import PaginationControlled from "../../components/PriceList/Pagination";
+import { ChartDataProvider } from "../../context/ChartDataProvider";
 
 function Prices() {
   const [coins, setCoins] = useState([]);
@@ -48,7 +49,10 @@ function Prices() {
         <h2>Cryptocurrency Prices</h2>
         <Search search={search} onSearchChange={onSearchChange} />
       </div>
-      <IconTabs coins={search ? filterCoins : paginatedCoins} />
+<ChartDataProvider>
+<IconTabs coins={search ? filterCoins : paginatedCoins} />
+
+</ChartDataProvider>
       {!search && (
         <PaginationControlled page={page} handleChange={handleChange} />
       )}
