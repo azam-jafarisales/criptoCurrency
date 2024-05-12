@@ -1,59 +1,29 @@
 import * as paths from "../configs/route-paths";
 import Dashboard from "./Dashboard";
-import NotFound from "./NotFound";
-import News from "./News";
-import Exchange from "./Exchange";
-import NFT from "./NftMarket";
-import Trade from "./Trade";
-import Setting from "./Setting";
-import Wallet from "./Wallet";
-import Transication from "./Transication";
 import Prices from "./Prices";
+import TrendingCoins from "./TrendingCoins";
+import Currency from "./Currency";
 
 export const routes = [
   {
-    path: paths.DASHBOARD,
-    element: <Dashboard />,
-  },
-  {
-    path: paths.EXCHANGE,
-    element: <Exchange />,
-  },
-  {
-    path: paths.NEWS,
-    element: <News />,
-  },
-  {
-    path: paths.NEWS,
-    element: <News />,
-  },
-  {
-    path: paths.SETTING,
-    element: <Setting />,
-  },
-  {
-    path: paths.NFT,
-    element: <NFT />,
-  },
-  {
-    path: paths.TRADE,
-    element: <Trade />,
-  },
-  {
-    path: paths.WALLET,
-    element: <Wallet />,
-  },
-  {
-    path: paths.TRANSICATION,
-    element: <Transication />,
-  },
-
-  {
-    path: paths.NOT_FOUNDED,
-    element: <NotFound />,
-  },
-  {
-    path: paths.PRICES,
-    element: <Prices />,
+    path: "/",
+    element: <Currency />,
+    children: [
+      {
+        index: true,
+        element: <Prices />,
+      },
+      {
+        path: paths.TRENDING,
+        element: <TrendingCoins />,
+      },
+      {
+        path: paths.DASHBOARD,
+        element: <Dashboard />,
+      },
+    
+    ],
   },
 ];
+
+
