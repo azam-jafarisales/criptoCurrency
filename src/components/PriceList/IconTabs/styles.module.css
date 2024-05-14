@@ -12,7 +12,7 @@
 
 .list_titles {
   display: grid;
-  grid-template-columns: 10px 50px repeat(6, 100px);
+  grid-template-columns: 10px 50px repeat(7, 100px);
   gap: 1.5rem;
   justify-content: start;
   align-items: center;
@@ -22,4 +22,13 @@
   white-space: nowrap;
   font-size: 0.9rem;
   word-spacing: 2px;
+}
+
+.grid_container {
+  display: flex;
+  /* grid-template-columns: repeat(4, 260px); */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
 }

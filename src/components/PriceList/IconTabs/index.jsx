@@ -6,9 +6,9 @@ import TabPanel from "@mui/lab/TabPanel";
 import Tab from "@mui/material/Tab";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import GridViewIcon from "@mui/icons-material/GridView";
-import BubbleChartIcon from "@mui/icons-material/BubbleChart";
 
 import List from "../List";
+import Grid from "../Grid";
 
 import styles from "./styles.module.css";
 
@@ -69,10 +69,11 @@ export default function IconTabs({ coins }) {
           </div>
         </TabPanel>
         <TabPanel value="grid">
-          <div>grid</div>
-        </TabPanel>
-        <TabPanel value="bubble">
-          <div>bubble</div>
+          <div className={styles.grid_container}>
+            {coins.map((coin, i) => {
+              return <Grid coin={coin} key={i} />;
+            })}
+          </div>
         </TabPanel>
       </TabContext>
     </ThemeProvider>
