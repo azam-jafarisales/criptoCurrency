@@ -1,11 +1,10 @@
-// import Header from "../../components/Common/Header";
-// import Cover from "../../components/LandingPage/Cover";
+import Cover from "../../components/Cover";
 
-// import styles from "./styles.module.css";
+import styles from "./styles.module.css";
 const HomePage = () => {
   return (
-    <div>
-      Home
+    <div className={styles.home}>
+      <Cover />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 .livePrices_container {
   background-color: inherit;
   min-height: 100vh;
+  position: relative;
 }
 
 .top_row {

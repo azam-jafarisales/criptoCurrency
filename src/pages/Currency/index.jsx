@@ -5,7 +5,7 @@ function Currency() {
   return (
     <>
       <div className={styles.container}>
-        <header className={styles.header}></header>
+        {/* <header className={styles.header}></header> */}
         <div className={styles.main}>
           <aside className={styles.sideBar}>
             <div>
