@@ -48,12 +48,6 @@ export default function IconTabs({ coins }) {
             value="grid"
             sx={style}
           />
-          <Tab
-            icon={<BubbleChartIcon sx={{ fontSize: 20 }} />}
-            aria-label="bubble"
-            value="bubble"
-            sx={style}
-          />
         </TabList>
         <TabPanel value="list">
           <div className={styles.list_container}>
