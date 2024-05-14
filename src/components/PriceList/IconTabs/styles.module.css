@@ -23,3 +23,12 @@
   font-size: 0.9rem;
   word-spacing: 2px;
 }
+
+.grid_container {
+  display: flex;
+  /* grid-template-columns: repeat(4, 260px); */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
