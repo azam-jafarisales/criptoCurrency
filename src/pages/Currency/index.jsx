@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import styles from "./style.module.css";
-import { FaUser } from "react-icons/fa"
+import { FaUser } from "react-icons/fa";
 function Currency() {
   return (
     <>
@@ -14,8 +14,10 @@ function Currency() {
               </div>
             </div>
             <div className={styles.btns}>
-              <button className={styles.homeBtn}>Home</button>
               <Link to={"/"}>
+                <button className={styles.homeBtn}>Home</button>
+              </Link>
+              <Link to={"/prices"}>
                 <button>Live Prices</button>
               </Link>
               <Link to={"/trending-coins"}>

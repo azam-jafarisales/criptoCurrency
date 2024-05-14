@@ -3,6 +3,7 @@ import Dashboard from "./Dashboard";
 import Prices from "./Prices";
 import TrendingCoins from "./TrendingCoins";
 import Currency from "./Currency";
+import HomePage from "./HomePage";
 
 export const routes = [
   {
@@ -11,8 +12,9 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <Prices />,
+        element: <HomePage />,
       },
+      { path: paths.PRICES, element: <Prices /> },
       {
         path: paths.TRENDING,
         element: <TrendingCoins />,
@@ -21,9 +23,6 @@ export const routes = [
         path: paths.DASHBOARD,
         element: <Dashboard />,
       },
-    
     ],
   },
 ];
-
-
