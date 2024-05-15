@@ -3,7 +3,6 @@ import styles from "./styles.module.css"
 import { PriceContext } from "../../context/PriceProvider";
 function Trends() {
   const [post, setPost] = useContext(PriceContext);
-  console.log(post)
   const sortedPost = post.sort((a, b) => {
     return a.market_cap_rank - b.market_cap_rank;
   });
