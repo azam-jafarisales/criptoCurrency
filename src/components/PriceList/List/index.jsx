@@ -14,7 +14,7 @@ const List = ({ coin }) => {
         <span>{coin.name}</span>
         <span>{coin.symbol.toUpperCase()}</span>
       </p>
-      <span>$ {coin.current_price.toLocaleString()}</span>
+      <span>$ {coin.current_price}</span>
       <span className={className}>
         <span>
           {coin.price_change_percentage_24h > 0 ? (
@@ -28,7 +28,7 @@ const List = ({ coin }) => {
       <span>$ {convertNumber(coin.market_cap)}</span>
       <span>$ {convertNumber(coin.total_volume)}</span>
       <div className={styles.circulating_supply}>
-        <span>{coin.circulating_supply.toLocaleString()}</span>
+        <span>{coin.circulating_supply}</span>
         <span>{coin.symbol.toUpperCase()}</span>
       </div>
     </div>

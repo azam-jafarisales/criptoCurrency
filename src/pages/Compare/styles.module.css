@@ -1,0 +1,8 @@
+.compare_wrapper {
+  background-color: var(--color-dark);
+  /* padding: 1.5rem 1rem; */
+  color: #fff;
+  border: 1px solid #8a8a8a;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}

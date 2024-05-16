@@ -23,6 +23,9 @@ function Currency() {
               <Link to={"/trending-coins"}>
                 <button>Trending Coins</button>
               </Link>
+              <Link to={"/compare"}>
+                <button>Compare Coins</button>
+              </Link>
             </div>
           </aside>
           <div className={styles.content}>
