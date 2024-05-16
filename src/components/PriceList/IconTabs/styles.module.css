@@ -12,7 +12,7 @@
 
 .list_titles {
   display: grid;
-  grid-template-columns: 10px 50px repeat(7, 100px);
+  grid-template-columns: 10px 50px repeat(6, 100px);
   gap: 1.5rem;
   justify-content: start;
   align-items: center;

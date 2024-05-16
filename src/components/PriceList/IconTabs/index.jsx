@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
@@ -59,7 +59,6 @@ export default function IconTabs({ coins }) {
               <span>24h%</span>
               <span>Market Cap</span>
               <span>Total volume</span>
-              <span>Chart</span>
               <span>Circulating Supply</span>
               <span></span>
             </div>

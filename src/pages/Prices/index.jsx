@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Search from "../../components/PriceList/Search";
 import IconTabs from "../../components/PriceList/IconTabs";
+import PaginationControlled from "../../components/PriceList/Pagination";
 
 import styles from "./styles.module.css";
-import PaginationControlled from "../../components/PriceList/Pagination";
-import { ChartDataProvider } from "../../context/ChartDataProvider";
 
 function Prices() {
   const [coins, setCoins] = useState([]);
@@ -49,10 +48,7 @@ function Prices() {
         <h2>Cryptocurrency Prices</h2>
         <Search search={search} onSearchChange={onSearchChange} />
       </div>
-<ChartDataProvider>
-<IconTabs coins={search ? filterCoins : paginatedCoins} />
-
-</ChartDataProvider>
+      <IconTabs coins={search ? filterCoins : paginatedCoins} />
       {!search && (
         <PaginationControlled page={page} handleChange={handleChange} />
       )}
