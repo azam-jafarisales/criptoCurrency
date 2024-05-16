@@ -11,6 +11,7 @@ import List from "../List";
 import Grid from "../Grid";
 
 import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 export default function IconTabs({ coins }) {
   const [value, setValue] = useState("list");
@@ -63,14 +64,22 @@ export default function IconTabs({ coins }) {
               <span></span>
             </div>
             {coins.map((coin, i) => {
-              return <List coin={coin} key={i} />;
+              return (
+                <Link to={`/coin/${coin.id}`} key={i}>
+                  <List coin={coin} />
+                </Link>
+              );
             })}
           </div>
         </TabPanel>
         <TabPanel value="grid">
           <div className={styles.grid_container}>
             {coins.map((coin, i) => {
-              return <Grid coin={coin} key={i} />;
+              return (
+                <Link to={`/coin/${coin.id}`} key={i}>
+                  <Grid coin={coin} />
+                </Link>
+              );
             })}
           </div>
         </TabPanel>
