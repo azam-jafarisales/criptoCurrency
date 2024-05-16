@@ -1,0 +1,21 @@
+.select_coins_div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3.5rem;
+  margin: 1.5rem auto;
+  flex-wrap: wrap;
+  background-color: var(--color-dark);
+  padding: 1.5rem 1rem;
+  color: #fff;
+  border: 1px solid #8a8a8a;
+  border-radius: 1rem;
+}
+
+.select_flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
