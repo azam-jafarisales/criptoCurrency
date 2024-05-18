@@ -1,23 +1,24 @@
 import { useContext } from "react";
-import styles from "./styles.module.css"
-import { PriceContext } from "../../context/PriceProvider";
+import styles from "./styles.module.css";
+import { TrendCoinsContext } from "../../context/trandCoinsProvider";
 function Trends() {
-  const [post, setPost] = useContext(PriceContext);
-  const sortedPost = post.sort((a, b) => {
-    return a.market_cap_rank - b.market_cap_rank;
-  });
-  const trendPosts =sortedPost.slice(0,10)
-  return (<div className={styles.container}>
-    {trendPosts.map((item)=>{
-       return (
-        <div className={styles.containerItem}>
-        <img src={item.image} />
-        <span>{item.name}</span>
-        <span>{item.current_price}</span>
+  const [trendCoins, setTrendCoins] = useContext(TrendCoinsContext);
+  console.log(trendCoins?.coins);
+
+  return (
+    <div className={styles.container}>
+      {trendCoins?.coins.map((coin) => {
+        return (
+          <div key={coin.item.coin_id} className={styles.containerItem}>
+            <div className={styles.rank}>rank:{coin.item.market_cap_rank}</div>
+            <img src={coin.item.small} />
+            <span>{coin.item.id}</span>
+            <span>{coin.item.data.price.toFixed(2)}$</span>
+          </div>
+        );
+      })}
     </div>
-       )
-    })}
-    </div>)
+  );
 }
 
 export default Trends;

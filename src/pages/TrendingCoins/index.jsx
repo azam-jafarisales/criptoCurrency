@@ -1,10 +1,10 @@
 import Trends from "../../components/Trends";
-import { PriceProvider } from "../../context/PriceProvider";
+import { TrendCoinsProvider } from "../../context/trandCoinsProvider";
 function TrendingCoins(){
     return (
-        <PriceProvider>
+        <TrendCoinsProvider>
             <Trends />
-        </PriceProvider>
+        </TrendCoinsProvider>
     )
 }
 
