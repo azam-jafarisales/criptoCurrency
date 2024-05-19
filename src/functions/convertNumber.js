@@ -1,6 +1,6 @@
 export const convertNumber = (number) => {
-  const numberWithCommas = number.toLocaleString();
-  var arr = numberWithCommas.split(",");
+  const numberWithCommas = number;
+  var arr = numberWithCommas.toLocaleString().split(",");
   if (arr.length === 5) {
     //Trillions
     return arr[0] + "." + arr[1].slice(0, 2) + "T";
@@ -15,6 +15,6 @@ export const convertNumber = (number) => {
     return arr[0] + "." + arr[1].slice(0, 2) + "K";
   } else {
     // Hundreds
-    return number.toLocaleString();
+    return number;
   }
 };

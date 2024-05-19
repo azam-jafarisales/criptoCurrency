@@ -5,8 +5,8 @@
   width: 90%;
   display: block;
   margin: 1.5rem auto;
-  background: inherit;
-  color: #fff;
+  background: var(--color-dark);
+  color: #e7e7e7;
   border: 1px solid #ccc;
   box-shadow: 0 0 8px -2px #929292;
   padding: 1rem 2rem;
@@ -30,14 +30,16 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  font-size: 1.2rem;
 }
 
-/* span {
-  color: rgb(209, 162, 100);
-  font-weight: bold;
-} */
+.prices {
+  color: rgb(164, 236, 142);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
 
-strong {
-  color: rgb(241, 241, 241);
+.text_bold {
+  color: #ccc;
   font-size: 1.1rem;
 }
