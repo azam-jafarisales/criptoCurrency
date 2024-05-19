@@ -5,7 +5,7 @@ import TrendingCoins from "./TrendingCoins";
 import Currency from "./Currency";
 import HomePage from "./HomePage";
 import CoinData from "./CoinData";
-import Compare from "./Compare";
+// import Compare from "./Compare";
 
 export const routes = [
   {
@@ -26,10 +26,10 @@ export const routes = [
         path: paths.DASHBOARD,
         element: <Dashboard />,
       },
-      {
-        path: paths.COMPARE,
-        element: <Compare />,
-      },
+      // {
+      //   path: paths.COMPARE,
+      //   element: <Compare />,
+      // },
     ],
   },
 ];
