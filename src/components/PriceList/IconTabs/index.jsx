@@ -13,7 +13,7 @@ import Grid from "../Grid";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 
-export default function IconTabs({ coins }) {
+export default function IconTabs({ post }) {
   const [value, setValue] = useState("list");
 
   const handleChange = (event, newValue) => {
@@ -63,7 +63,7 @@ export default function IconTabs({ coins }) {
               <span>Circulating Supply</span>
               <span></span>
             </div>
-            {coins.map((coin, i) => {
+            {post.map((coin, i) => {
               return (
                 <Link to={`/coin/${coin.id}`} key={i}>
                   <List coin={coin} />
@@ -74,7 +74,7 @@ export default function IconTabs({ coins }) {
         </TabPanel>
         <TabPanel value="grid">
           <div className={styles.grid_container}>
-            {coins.map((coin, i) => {
+            {post.map((coin, i) => {
               return (
                 <Link to={`/coin/${coin.id}`} key={i}>
                   <Grid coin={coin} />
