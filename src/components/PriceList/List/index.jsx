@@ -1,4 +1,4 @@
-import { convertNumber } from "../../../functions/convertNumber";
+// import { convertNumber } from "../../../functions/convertNumber";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import styles from "./styles.module.css";
@@ -25,8 +25,8 @@ const List = ({ coin }) => {
         </span>
         {coin.price_change_percentage_24h.toFixed(2)} %
       </span>
-      <span>$ {convertNumber(coin.market_cap)}</span>
-      <span>$ {convertNumber(coin.total_volume)}</span>
+      <span>$ {coin.market_cap}</span>
+      <span>$ {coin.total_volume}</span>
       <div className={styles.circulating_supply}>
         <span>{coin.circulating_supply}</span>
         <span>{coin.symbol.toUpperCase()}</span>

@@ -1,19 +1,31 @@
-.info-component {
-  color: #b8b8b8;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
 .info-component h1 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: 0;
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+.info-p {
+  font-size: 1rem;
+  line-height: 1.4;
+  word-spacing: 1px;
   color: #ccc;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: rgb(71, 177, 204);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .info-p a {
   text-decoration: underline;
+  color: rgb(107, 107, 189);
 }
 
 .info-p a:hover {
-  color: blue !important;
+  color: lightseagreen;
   transition: all 0.3s;
 }
